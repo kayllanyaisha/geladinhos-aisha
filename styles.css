@@ -1,0 +1,172 @@
+* {
+    font-family: "Anta", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adapta automaticamente */
+    gap: 1rem;
+    padding: 20px;
+    background-color: black;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.containerMaracuja, 
+.containerMorango, 
+.containerChocolate, 
+.containerCoco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.containerMaracuja {
+    background-color: yellow;
+}
+
+.containerMorango {
+    background-color: #EBCBCC;
+}
+
+.containerChocolate {
+    background-color: #B19087;
+}
+
+.containerCoco {
+    background-color: #E6E3E7;
+}
+.containerCoco img{
+    width: 300px;
+    height: 176px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.button {
+    --color: #00A97F;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.button::before {
+    top: -1em;
+    left: -1em;
+}
+
+.button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.button:hover {
+    color: rgb(10, 25, 30);
+}
+
+.button:active {
+    filter: brightness(.8);
+}
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo img{
+        max-width: 300px;
+        height: 140px;
+    }
+
+    .containerMaracuja, 
+    .containerMorango, 
+    .containerChocolate, 
+    .containerCoco {
+        width: 90%; 
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .button {
+        font-size: 18px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1440px){
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo img{
+        max-width: 300px;
+        height: 150px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 28px;
+    }
+
+    .button {
+        font-size: 28px;
+    }
+}
